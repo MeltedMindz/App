@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenSea Page Lookup - Results</title>
+</head>
+<body>
+    <h1>OpenSea Page Lookup - Results</h1>
+    <ul>
+        {% for address, opensea_page in opensea_pages %}
+            <li>
+                <strong>Ethereum Address:</strong> {{ address }}<br>
+                <strong>OpenSea Page:</strong> <a href="{{ opensea_page }}" target="_blank">{{ opensea_page }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenSea Page Lookup</title>
+</head>
+<body>
+    <h1>OpenSea Page Lookup</h1>
+    <form method="POST">
+        <textarea name="ethereum_addresses" rows="5" cols="40" placeholder="Enter Ethereum addresses, one per line"></textarea><br>
+        <button type="submit">Lookup OpenSea Pages</button>
+    </form>
+    {% if opensea_pages %}
+    <h2>OpenSea Pages:</h2>
+    <ul>
+        {% for address, opensea_page in opensea_pages %}
+            <li>
+                <strong>Ethereum Address:</strong> {{ address }}<br>
+                <strong>OpenSea Page:</strong> <a href="{{ opensea_page }}" target="_blank">{{ opensea_page }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
